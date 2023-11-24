@@ -1,0 +1,1502 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz/"
+     xml:base="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:Quiz="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Avoir -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Avoir">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Avoir_Acces_A -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Avoir_Acces_A">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Contenir -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Contenir">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Contenir"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Examiné_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Examiné_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Examiné_Par"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">150</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Examiné_Par"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">150</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Lu_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Lu_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EvaluationEtudiant"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Lu_Par"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Parcouru_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Es_Parcouru_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Ajouté_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Ajouté_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Consulté_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Consulté_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Crée_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Crée_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Edité_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Edité_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Englobé_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Englobé_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Etudiant_De -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Etudiant_De">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Prof_De"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Evalué_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Evalué_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Faite_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Faite_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Gagné_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Gagné_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Récompense"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Mentionné_Dans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Mentionné_Dans">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Mis_EnLigne -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Mis_EnLigne">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Passé_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Passé_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Prof_De -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Prof_De">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Publié_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Publié_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Resolu_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Resolu_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Réalisé_Selon -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Réalisé_Selon">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Réclamé_Par -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Est_Réclamé_Par">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Inclu_Des -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Inclu_Des">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Renfermer_Des -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Renfermer_Des">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Badge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Badge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EvaluationEtudiant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ContenuReclamation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ContenuReclamation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ContenueProg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ContenueProg">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionCours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionCours">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionEvent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionEvent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionPerformance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionPerformance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionQuiz -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DescriptionQuiz">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DiplomeProf -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#DiplomeProf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Email">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EnoncéQuestion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EnoncéQuestion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Expérience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Expérience">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HeureDebutProg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HeureDebutProg">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HeureFinProg -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HeureFinProg">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HistoriqueQuiz -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#HistoriqueQuiz">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#JourProgramme -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#JourProgramme">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#LieuEvent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#LieuEvent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#MotDePasse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#MotDePasse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Métrique -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Métrique">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NbEquipe -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NbEquipe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NbParticipant -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NbParticipant">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Conférence"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauDiff -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauDiff">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauMatiere -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauMatiere">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauPerformance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauPerformance">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauScolaire -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NiveauScolaire">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Nom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Nom">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomEvent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomEvent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomMatiere -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomMatiere">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomProgramme -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomProgramme">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomRessource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NomRessource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombreQuizPassés -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombreQuizPassés">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatEtud"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombreQuizPublié -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombreQuizPublié">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatProf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombredeCoursPublie -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NombredeCoursPublie">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatProf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NumReclamation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#NumReclamation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ParametreFiltrage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ParametreFiltrage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Filtre"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeExamen -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeExamen">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeInscription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeInscription">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeVacances -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PeriodeVacances">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PriceCash -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#PriceCash">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#RemarqueSurPerformance -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#RemarqueSurPerformance">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Score -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Score">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Spécialité -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Spécialité">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatusReclamation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatusReclamation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatusReponse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatusReponse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TexteQuestion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TexteQuestion">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TexteReponse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TexteReponse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreCours -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreCours">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreNiveau -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreNiveau">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreQuiz -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreQuiz">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreReclamation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreReclamation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreRecommandation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TitreRecommandation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TypeRecompense -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TypeRecompense">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Récompense"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TypeRessource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#TypeRessource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ValeureReponse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ValeureReponse">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Bibliographie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Conférence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Conférence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EvaluationEtudiant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EvaluationEtudiant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEdu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Filtre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Filtre"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Langues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Langues">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Mathematique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Mathematique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Question">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Quiz"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationEtudiant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationEtudiant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationProf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationProf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Récompense -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Récompense"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réponse"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Scientifique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Scientifique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatEtud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatEtud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatProf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#StatProf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Statistique"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Utilisateur"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:Email xml:lang="gmail.com">Anonymous123.admin</Quiz:Email>
+        <Quiz:MotDePasse>Anonyme123456Quiz</Quiz:MotDePasse>
+        <Quiz:Nom>Anonymous</Quiz:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1"/>
+        <Quiz:HistoriqueQuiz>Quiz Mathématiques</Quiz:HistoriqueQuiz>
+        <Quiz:Score rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</Quiz:Score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2"/>
+        <Quiz:HistoriqueQuiz>QuizMath</Quiz:HistoriqueQuiz>
+        <Quiz:Score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</Quiz:Score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+        <Quiz:HistoriqueQuiz>QuizSVT</Quiz:HistoriqueQuiz>
+        <Quiz:Score rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">160</Quiz:Score>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1"/>
+        <Quiz:HistoriqueQuiz>Quiz Sciences Naturelles</Quiz:HistoriqueQuiz>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof2"/>
+        <Quiz:HistoriqueQuiz>QuizSVT</Quiz:HistoriqueQuiz>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf"/>
+        <Quiz:Est_Edité_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3"/>
+        <Quiz:HistoriqueQuiz>QuizMath</Quiz:HistoriqueQuiz>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursAnglais1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursAnglais1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <Quiz:Est_Crée_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3"/>
+        <Quiz:Renfermer_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau3"/>
+        <Quiz:DescriptionCours>HighLevel</Quiz:DescriptionCours>
+        <Quiz:TitreCours>Language</Quiz:TitreCours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursFrancais -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursFrancais">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <Quiz:Est_Crée_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3"/>
+        <Quiz:Renfermer_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau3"/>
+        <Quiz:DescriptionCours>low</Quiz:DescriptionCours>
+        <Quiz:TitreCours>Vocabulaire</Quiz:TitreCours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursMath -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursMath">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <Quiz:Est_Crée_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof2"/>
+        <Quiz:Renfermer_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau2"/>
+        <Quiz:DescriptionCours>low</Quiz:DescriptionCours>
+        <Quiz:TitreCours>Complexe</Quiz:TitreCours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursSVT1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursSVT1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Cours"/>
+        <Quiz:Est_Crée_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1"/>
+        <Quiz:Renfermer_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau1"/>
+        <Quiz:DescriptionCours>levelstandard</Quiz:DescriptionCours>
+        <Quiz:TitreCours>Anatomie</Quiz:TitreCours>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+        <Quiz:Email xml:lang="gmail.com">lina</Quiz:Email>
+        <Quiz:MotDePasse>123aze1203</Quiz:MotDePasse>
+        <Quiz:NiveauScolaire>5ème année</Quiz:NiveauScolaire>
+        <Quiz:Nom>Lina</Quiz:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduComp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduComp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition"/>
+        <Quiz:Es_Examiné_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2"/>
+        <Quiz:Est_Ajouté_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:Est_Réalisé_Selon rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme2"/>
+        <Quiz:DescriptionEvent>Compétition de programmation</Quiz:DescriptionEvent>
+        <Quiz:LieuEvent>Charguia</Quiz:LieuEvent>
+        <Quiz:NbEquipe rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</Quiz:NbEquipe>
+        <Quiz:NomEvent>Hackaton</Quiz:NomEvent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduComp2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduComp2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Compétition"/>
+        <Quiz:Es_Examiné_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+        <Quiz:Est_Ajouté_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:Est_Réalisé_Selon rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme3"/>
+        <Quiz:DescriptionEvent>CompetitionC++</Quiz:DescriptionEvent>
+        <Quiz:LieuEvent>Tunis</Quiz:LieuEvent>
+        <Quiz:NomEvent>Competition2</Quiz:NomEvent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduConf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduConf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Conférence"/>
+        <Quiz:Es_Examiné_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1"/>
+        <Quiz:Es_Examiné_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1"/>
+        <Quiz:Est_Ajouté_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:Est_Réalisé_Selon rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme1"/>
+        <Quiz:DescriptionEvent>Conférence sur les méthodologies de travail</Quiz:DescriptionEvent>
+        <Quiz:LieuEvent>Nasser</Quiz:LieuEvent>
+        <Quiz:NbParticipant rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</Quiz:NbParticipant>
+        <Quiz:NomEvent>Conférence1</Quiz:NomEvent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduConf2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#EventEduConf2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Conférence"/>
+        <Quiz:Es_Examiné_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+        <Quiz:Est_Ajouté_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:Est_Réalisé_Selon rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme3"/>
+        <Quiz:DescriptionEvent>Conference pour les profs</Quiz:DescriptionEvent>
+        <Quiz:LieuEvent>Aouina</Quiz:LieuEvent>
+        <Quiz:NbParticipant rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</Quiz:NbParticipant>
+        <Quiz:NomEvent>Conference2</Quiz:NomEvent>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Mathematique"/>
+        <Quiz:Inclu_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursMath"/>
+        <Quiz:NomMatiere>Mathematique</Quiz:NomMatiere>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Scientifique"/>
+        <Quiz:Inclu_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursSVT1"/>
+        <Quiz:NomMatiere>SVT</Quiz:NomMatiere>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Matiere3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Langues"/>
+        <Quiz:Inclu_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursAnglais1"/>
+        <Quiz:Inclu_Des rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#CoursFrancais"/>
+        <Quiz:NomMatiere>Langue</Quiz:NomMatiere>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+        <Quiz:TitreNiveau>Avancé</Quiz:TitreNiveau>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+        <Quiz:TitreNiveau>Intermediaire</Quiz:TitreNiveau>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Niveau"/>
+        <Quiz:TitreNiveau>Debutant</Quiz:TitreNiveau>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Perfermance1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Perfermance1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <Quiz:Est_Faite_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:DescriptionPerformance>L&apos;étudiant a obtenu des résultats exceptionnels tout au long de l&apos;année académique.</Quiz:DescriptionPerformance>
+        <Quiz:NiveauPerformance>Excellent</Quiz:NiveauPerformance>
+        <Quiz:RemarqueSurPerformance>L&apos;étudiant a montré une détermination et un dévouement constants envers ses études.</Quiz:RemarqueSurPerformance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Perfermance2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Perfermance2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Performance"/>
+        <Quiz:Est_Faite_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+        <Quiz:DescriptionPerformance>L&apos;étudiant a obtenu des résultats globalement satisfaisants au cours de l&apos;année académique</Quiz:DescriptionPerformance>
+        <Quiz:NiveauPerformance>Satisfaisant</Quiz:NiveauPerformance>
+        <Quiz:RemarqueSurPerformance>L&apos;étudiant a montré des efforts pour améliorer ses résultats académiques</Quiz:RemarqueSurPerformance>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <Quiz:Est_Prof_De rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1"/>
+        <Quiz:Email xml:lang="gmail.com">fathi</Quiz:Email>
+        <Quiz:Expérience>Professeur de sciences naturelles pendant 3 ans</Quiz:Expérience>
+        <Quiz:MotDePasse>fathi123lovescience</Quiz:MotDePasse>
+        <Quiz:Nom>Fathi</Quiz:Nom>
+        <Quiz:Spécialité>SVT</Quiz:Spécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <Quiz:Est_Prof_De rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2"/>
+        <Quiz:Email>prof2@gmail.com</Quiz:Email>
+        <Quiz:Expérience>5ans de travail</Quiz:Expérience>
+        <Quiz:MotDePasse>prof2mdp</Quiz:MotDePasse>
+        <Quiz:Nom>Kamel</Quiz:Nom>
+        <Quiz:Spécialité>Informatique</Quiz:Spécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        <Quiz:Est_Prof_De rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+        <Quiz:Nom>Mohamed</Quiz:Nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <Quiz:Es_Parcouru_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1"/>
+        <Quiz:Est_Publié_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1"/>
+        <Quiz:HeureDebutProg>09H</Quiz:HeureDebutProg>
+        <Quiz:HeureFinProg>14H</Quiz:HeureFinProg>
+        <Quiz:JourProgramme>Lundi</Quiz:JourProgramme>
+        <Quiz:NomProgramme>Programme methodologie</Quiz:NomProgramme>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <Quiz:Es_Parcouru_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant2"/>
+        <Quiz:Est_Publié_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof2"/>
+        <Quiz:HeureDebutProg>08H</Quiz:HeureDebutProg>
+        <Quiz:HeureFinProg>17H</Quiz:HeureFinProg>
+        <Quiz:JourProgramme>Mardi</Quiz:JourProgramme>
+        <Quiz:NomProgramme>Programme Hackathon</Quiz:NomProgramme>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Programme"/>
+        <Quiz:Es_Parcouru_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant3"/>
+        <Quiz:Est_Publié_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof3"/>
+        <Quiz:HeureDebutProg>07H</Quiz:HeureDebutProg>
+        <Quiz:HeureFinProg>18H</Quiz:HeureFinProg>
+        <Quiz:JourProgramme>Samedi</Quiz:JourProgramme>
+        <Quiz:NomProgramme>Programme Samedi</Quiz:NomProgramme>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationEtud1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationEtud1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <Quiz:Est_Réclamé_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant1"/>
+        <Quiz:ContenuReclamation>Cours difficile à comprendre!!!!</Quiz:ContenuReclamation>
+        <Quiz:NumReclamation rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</Quiz:NumReclamation>
+        <Quiz:StatusReclamation>Unprocessed</Quiz:StatusReclamation>
+        <Quiz:TitreReclamation>Manque d&apos;informations</Quiz:TitreReclamation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationProf1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#ReclamationProf1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Réclamation"/>
+        <Quiz:Est_Réclamé_Par rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Prof1"/>
+        <Quiz:ContenuReclamation>Je réclame ce document cocernant le cours de français suite à une faute d&apos;orthographe.</Quiz:ContenuReclamation>
+        <Quiz:NumReclamation rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</Quiz:NumReclamation>
+        <Quiz:StatusReclamation>Processed</Quiz:StatusReclamation>
+        <Quiz:TitreReclamation>Fautre dans le cours</Quiz:TitreReclamation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant1"/>
+        <Quiz:NomRessource>CoursDeRevision</Quiz:NomRessource>
+        <Quiz:TypeRessource>PDF</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant2"/>
+        <Quiz:NomRessource>ExamenDeRevision</Quiz:NomRessource>
+        <Quiz:TypeRessource>PDF</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioEtudiant3"/>
+        <Quiz:NomRessource>ArticlesEducatif</Quiz:NomRessource>
+        <Quiz:TypeRessource>Article</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf1"/>
+        <Quiz:NomRessource>GuideEducatif</Quiz:NomRessource>
+        <Quiz:TypeRessource>Guides</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf2"/>
+        <Quiz:NomRessource>Exercices</Quiz:NomRessource>
+        <Quiz:TypeRessource>Ateliers</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Ressource"/>
+        <Quiz:Est_Mentionné_Dans rdf:resource="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#BiblioProf3"/>
+        <Quiz:NomRessource>FormationEnLigneEducative</Quiz:NomRessource>
+        <Quiz:TypeRessource>Formation</Quiz:TypeRessource>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Admin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Etudiant"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/infosat/ontologies/2023/9/Quiz#Professeur"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+

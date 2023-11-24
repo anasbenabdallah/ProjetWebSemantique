@@ -1,0 +1,50 @@
+/* CSS pour DetailEvent */
+.detail-event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/conference.jpg'); /* Chemin relatif vers votre image */
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .event-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .event-card h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .event-info p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .back-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  

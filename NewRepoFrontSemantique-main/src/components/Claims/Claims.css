@@ -1,0 +1,47 @@
+/* AdminPerformance.css */
+
+/* Style the header and container */
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #343a40;
+}
+
+/* Style the search input */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Style the table */
+.table {
+  background-color: #fff;
+}
+
+.table thead th {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+
+/* Style the pagination and PDF button */
+.pagination {
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Add more custom styles as needed */
